@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1x50rpfnfopc"]
+
+[ext_resource type="Script" path="res://Scripts/Ship_Controls.gd" id="1_oevpn"]
+[ext_resource type="Texture2D" uid="uid://cycc1f0cb8h8f" path="res://Assets/Sprites/Ships/Ship_Blue_G1.tres" id="1_ria5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln7g6"]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_oevpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ria5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ln7g6")
