@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://duayu5ksdqvt6"]
+[gd_scene load_steps=3 format=3 uid="uid://duayu5ksdqvt6"]
 
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="1_njrs5"]
+[ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Bullet.tscn" id="2_3802e"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_njrs5")]
 position = Vector2(472, 325)
+
+[node name="Bullet" parent="." instance=ExtResource("2_3802e")]
+position = Vector2(624, 287)
+
+[node name="Bullet2" parent="." instance=ExtResource("2_3802e")]
+position = Vector2(692, 325)
+rotation = 2.52724
