@@ -6,14 +6,25 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ln7g6"]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" node_paths=PackedStringArray("Barrels") groups=["Player"]]
 script = ExtResource("1_oevpn")
-speed = 500.0
-projectile_scene = ExtResource("2_0dk6x")
+primary_fire_projectile_scene = ExtResource("2_0dk6x")
 shoot_cooldown = 0.5
+Barrels = [NodePath("Sprite2D/Barrel1"), NodePath("Sprite2D/Barrel2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ria5y")
 
+[node name="Barrel1" type="Node2D" parent="Sprite2D"]
+position = Vector2(-11, 0)
+
+[node name="Barrel2" type="Node2D" parent="Sprite2D"]
+position = Vector2(11, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ln7g6")
+
+[node name="PrimaryFireCooldownTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="PrimaryFireCooldownTimer" to="." method="_on_primary_fire_cooldown_timer_timeout"]
