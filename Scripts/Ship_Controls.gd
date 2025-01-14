@@ -58,6 +58,7 @@ func shoot() -> void:
 		var spawned_projectile = primary_fire_projectile_scene.instantiate()
 		
 		spawned_projectile.global_position = i.global_position
+		spawned_projectile.add_to_group("Player")
 		get_tree().current_scene.add_child(spawned_projectile)
 	#spawned_projectile.global_position = global_position + Vector2(0, -20)
 	

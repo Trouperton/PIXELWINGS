@@ -1,28 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1x50rpfnfopc"]
 
 [ext_resource type="Script" path="res://Scripts/Ship_Controls.gd" id="1_oevpn"]
-[ext_resource type="Texture2D" uid="uid://cycc1f0cb8h8f" path="res://Assets/Sprites/Ships/Ship_Blue_G1.tres" id="1_ria5y"]
-[ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Bullet.tscn" id="2_0dk6x"]
+[ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Projectiles/Bullet.tscn" id="2_188fx"]
+[ext_resource type="Texture2D" uid="uid://b2m15a3h3y8ac" path="res://Assets/Sprites/Ships/Green/Ship_Green_G1.tres" id="3_rflij"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ln7g6"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyeu4"]
+radius = 9.0
 
 [node name="Player" type="Area2D" node_paths=PackedStringArray("Barrels") groups=["Player"]]
 script = ExtResource("1_oevpn")
-primary_fire_projectile_scene = ExtResource("2_0dk6x")
+primary_fire_projectile_scene = ExtResource("2_188fx")
 shoot_cooldown = 0.5
 Barrels = [NodePath("Sprite2D/Barrel1"), NodePath("Sprite2D/Barrel2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ria5y")
+texture = ExtResource("3_rflij")
 
 [node name="Barrel1" type="Node2D" parent="Sprite2D"]
-position = Vector2(-11, 0)
+position = Vector2(-10, 0)
 
 [node name="Barrel2" type="Node2D" parent="Sprite2D"]
-position = Vector2(11, 0)
+position = Vector2(10, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ln7g6")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yyeu4")
 
 [node name="PrimaryFireCooldownTimer" type="Timer" parent="."]
 wait_time = 0.2
