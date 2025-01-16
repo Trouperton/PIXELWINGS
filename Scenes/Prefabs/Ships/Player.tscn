@@ -8,6 +8,7 @@
 radius = 9.0
 
 [node name="Player" type="Area2D" node_paths=PackedStringArray("barrels") groups=["Player"]]
+z_index = 5
 script = ExtResource("1_oevpn")
 primary_fire_projectile = ExtResource("2_188fx")
 barrels = [NodePath("Sprite2D/Barrel1"), NodePath("Sprite2D/Barrel2")]
