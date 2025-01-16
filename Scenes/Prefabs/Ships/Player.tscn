@@ -7,11 +7,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyeu4"]
 radius = 9.0
 
-[node name="Player" type="Area2D" node_paths=PackedStringArray("Barrels") groups=["Player"]]
+[node name="Player" type="Area2D" node_paths=PackedStringArray("barrels") groups=["Player"]]
 script = ExtResource("1_oevpn")
-primary_fire_projectile_scene = ExtResource("2_188fx")
-shoot_cooldown = 0.5
-Barrels = [NodePath("Sprite2D/Barrel1"), NodePath("Sprite2D/Barrel2")]
+primary_fire_projectile = ExtResource("2_188fx")
+barrels = [NodePath("Sprite2D/Barrel1"), NodePath("Sprite2D/Barrel2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_rflij")
