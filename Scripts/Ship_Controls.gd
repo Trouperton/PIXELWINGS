@@ -2,10 +2,16 @@ extends "res://Scripts/base_damageable_object.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Local Variables
+	
+	# Main _ready()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Local Variables
+	
+	# Main _process()
 	position += move_direction.normalized() * move_speed * delta
 
 func _input(event):
@@ -41,4 +47,7 @@ func _input(event):
 
 # This function triggers when the connected timer runs out
 func _on_primary_fire_cooldown_timer_timeout() -> void:
+	# Local Variables
+	
+	# Main _on_primary_fire_cooldown_timer_timeout()
 	shoot_primary()
