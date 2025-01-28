@@ -30,6 +30,7 @@ func _input(event):
 			move_direction.x += 1
 		
 		if event.is_action_pressed("primary_fire"):
+			print("[Primary Fire] Pressed")
 			$PrimaryFireCooldownTimer.start()
 	elif event is InputEventKey and event.is_released():
 		# The following 4 if statements handle released keyboard movement input
@@ -43,6 +44,7 @@ func _input(event):
 			move_direction.x -= 1
 		
 		if event.is_action_released("primary_fire"):
+			print("[Primary Fire] Released")
 			$PrimaryFireCooldownTimer.stop()
 
 # This function triggers when the connected timer runs out

@@ -5,11 +5,11 @@
 [ext_resource type="Script" path="res://Scripts/Island_Movement.gd" id="2_5cmm2"]
 [ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/Enemy.tscn" id="4_j5xx6"]
 
-[sub_resource type="Curve" id="Curve_ffxvw"]
+[sub_resource type="Curve" id="Curve_uyutq"]
 min_value = -90.0
 max_value = 90.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.252809, 90), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.752809, -90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Main" type="Node2D"]
 
@@ -24,12 +24,17 @@ tile_set = ExtResource("1_xd7t4")
 script = ExtResource("2_5cmm2")
 
 [node name="Player" parent="." instance=ExtResource("1_njrs5")]
-position = Vector2(283, 167)
+position = Vector2(284, 220)
 
 [node name="Enemy" parent="." instance=ExtResource("4_j5xx6")]
-position = Vector2(597, 58)
-rotation = -2.34825
-seconds_to_finish_curve = 5.0
-loop_curve = true
-path_curve = SubResource("Curve_ffxvw")
+position = Vector2(666, -36)
+rotation = -2.73999
+seconds_to_finish_curve = 3.0
+path_curve = SubResource("Curve_uyutq")
+move_speed = 50.0
+
+[node name="Enemy2" parent="." instance=ExtResource("4_j5xx6")]
+position = Vector2(285, 18)
+rotation = 3.13916
+loop_curve = false
 move_speed = 50.0

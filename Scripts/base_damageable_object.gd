@@ -37,3 +37,7 @@ func despawn():
 	
 	# Main despawn()
 	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Projectile") and not area.is_in_group(get_groups()[0]):
+		damage(area.damage)

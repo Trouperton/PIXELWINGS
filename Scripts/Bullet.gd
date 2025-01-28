@@ -1,7 +1,8 @@
 extends Area2D
 
 # Global Variables
-@export var speed : int = 200
+@export var speed: int = 200
+@export var damage: int = 10
 
 # Class Functions
 
