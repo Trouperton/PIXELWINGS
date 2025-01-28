@@ -30,6 +30,7 @@ func damage(damage_dealt: int):
 	# Main damage()
 	health -= damage_dealt
 	if health < 1:
+		set_deferred("monitoring", false)
 		despawn()
 
 func despawn():

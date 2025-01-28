@@ -32,3 +32,7 @@ func movement(delta: float) -> void:
 	direction.y = -(cos(rotation_degrees * 3.14 / 180))
 	
 	position += direction * speed * delta
+
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
