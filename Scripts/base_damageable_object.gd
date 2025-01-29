@@ -40,5 +40,9 @@ func despawn():
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
+	# Local Variables
+	
+	# Main _on_area_entered()
 	if area.is_in_group("Projectile") and not area.is_in_group(get_groups()[0]):
 		damage(area.damage)
+		area.despawn()

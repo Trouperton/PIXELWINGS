@@ -33,5 +33,8 @@ func movement(delta: float) -> void:
 	
 	position += direction * speed * delta
 
-func _on_despawn_timer_timeout() -> void:
+func despawn() -> void:
 	queue_free()
+
+func _on_despawn_timer_timeout() -> void:
+	despawn()
