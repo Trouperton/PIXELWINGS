@@ -1,6 +1,8 @@
 extends "res://Scripts/base_damageable_object.gd"
 
 # Global Variables
+@export var score_value: int = 100
+
 @export_group("Movement Pattern")
 @export var seconds_to_finish_curve: float = 1
 @export var loop_curve: bool = true
