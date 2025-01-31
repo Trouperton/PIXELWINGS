@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	# Local Variables
 	
 	# Main _process()
-	position += move_direction.normalized() * move_speed * delta
+	position += move_direction * move_speed * delta
 
 func _input(event):
 	# Local Variables
@@ -20,7 +20,7 @@ func _input(event):
 	# Main _input()
 	## This if statement handles player movement
 	if event is InputEventKey or event is InputEventJoypadMotion:
-		move_direction = Input.get_vector("left", "right", "up", "down")
+		move_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	## These if statements handle player firing input
 	if event.is_action_pressed("primary_fire"):
