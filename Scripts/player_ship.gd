@@ -18,34 +18,15 @@ func _input(event):
 	# Local Variables
 	
 	# Main _input()
-	if event is InputEventKey and event.is_pressed():
-		# The following 4 if statements handle pressed down keyboard movement input
-		if event.is_action_pressed("up"):
-			move_direction.y -= 1
-		if event.is_action_pressed("down"):
-			move_direction.y += 1
-		if event.is_action_pressed("left"):
-			move_direction.x -= 1
-		if event.is_action_pressed("right"):
-			move_direction.x += 1
-		
-		if event.is_action_pressed("primary_fire"):
-			print("[Primary Fire] Pressed")
-			$PrimaryFireCooldownTimer.start()
-	elif event is InputEventKey and event.is_released():
-		# The following 4 if statements handle released keyboard movement input
-		if event.is_action_released("up"):
-			move_direction.y += 1
-		if event.is_action_released("down"):
-			move_direction.y -= 1
-		if event.is_action_released("left"):
-			move_direction.x += 1
-		if event.is_action_released("right"):
-			move_direction.x -= 1
-		
-		if event.is_action_released("primary_fire"):
-			print("[Primary Fire] Released")
-			$PrimaryFireCooldownTimer.stop()
+	## This if statement handles player movement
+	if event is InputEventKey or event is InputEventJoypadMotion:
+		move_direction = Input.get_vector("left", "right", "up", "down")
+	
+	## These if statements handle player firing input
+	if event.is_action_pressed("primary_fire"):
+		$PrimaryFireCooldownTimer.start()
+	elif event.is_action_released("primary_fire"):
+		$PrimaryFireCooldownTimer.stop()
 
 # This function triggers when the connected timer runs out
 func _on_primary_fire_cooldown_timer_timeout() -> void:
