@@ -31,13 +31,15 @@ func damage(damage_dealt: int):
 	health -= damage_dealt
 	if health < 1:
 		set_deferred("monitoring", false)
+		$DeathAudioStreamPlayer2D.play()
 		despawn()
 
 func despawn():
 	# Local Variables
 	
 	# Main despawn()
-	queue_free()
+	visible = false
+	$PrimaryFireCooldownTimer.stop()
 
 func _on_area_entered(area: Area2D) -> void:
 	# Local Variables
@@ -46,3 +48,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and not area.is_in_group(get_groups()[0]):
 		damage(area.damage)
 		area.despawn()
+
+func _on_death_audio_stream_player_2d_finished() -> void:
+	queue_free()

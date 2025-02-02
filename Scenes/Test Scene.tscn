@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://duayu5ksdqvt6"]
+[gd_scene load_steps=7 format=4 uid="uid://duayu5ksdqvt6"]
 
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="1_njrs5"]
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_xd7t4"]
 [ext_resource type="Script" path="res://Scripts/Island_Movement.gd" id="2_5cmm2"]
 [ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/Enemy.tscn" id="4_j5xx6"]
+[ext_resource type="PackedScene" uid="uid://dlj2mf8v7y24b" path="res://Scenes/Prefabs/formation_test.tscn" id="5_2csu3"]
 
 [sub_resource type="Curve" id="Curve_uyutq"]
 min_value = -90.0
@@ -38,3 +39,7 @@ position = Vector2(285, 18)
 rotation = 3.13916
 loop_curve = false
 move_speed = 50.0
+
+[node name="Formation" parent="." instance=ExtResource("5_2csu3")]
+position = Vector2(536, 19)
+rotation = 3.14159

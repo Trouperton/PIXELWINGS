@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1x50rpfnfopc"]
+[gd_scene load_steps=6 format=3 uid="uid://b1x50rpfnfopc"]
 
 [ext_resource type="Script" path="res://Scripts/player_ship.gd" id="1_oevpn"]
 [ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Projectiles/Bullet.tscn" id="2_188fx"]
 [ext_resource type="Texture2D" uid="uid://b2m15a3h3y8ac" path="res://Assets/Sprites/Ships/Green/Ship_Green_G1.tres" id="3_rflij"]
+[ext_resource type="AudioStream" uid="uid://cd6wie04v07gs" path="res://Assets/Sound/Retro Explosion Short 01.wav" id="4_lstvy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyeu4"]
 radius = 9.0
@@ -26,8 +27,14 @@ position = Vector2(10, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yyeu4")
 
+[node name="DeathAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+rotation = 1.5708
+stream = ExtResource("4_lstvy")
+volume_db = 2.0
+
 [node name="PrimaryFireCooldownTimer" type="Timer" parent="."]
 wait_time = 0.2
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="finished" from="DeathAudioStreamPlayer2D" to="." method="_on_death_audio_stream_player_2d_finished"]
 [connection signal="timeout" from="PrimaryFireCooldownTimer" to="." method="_on_primary_fire_cooldown_timer_timeout"]

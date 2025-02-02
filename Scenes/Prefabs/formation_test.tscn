@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlj2mf8v7y24b"]
+
+[ext_resource type="PackedScene" uid="uid://bvwcr4hf5luic" path="res://Scenes/Prefabs/formation_template.tscn" id="1_3nnp8"]
+[ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/Enemy.tscn" id="2_bqm68"]
+
+[sub_resource type="Curve" id="Curve_oridx"]
+min_value = -90.0
+max_value = 90.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Formation" instance=ExtResource("1_3nnp8")]
+seconds_to_finish_curve = 3.0
+path_curve = SubResource("Curve_oridx")
+
+[node name="Enemy" parent="." index="0" instance=ExtResource("2_bqm68")]
+
+[node name="Enemy2" parent="." index="1" instance=ExtResource("2_bqm68")]
+position = Vector2(-25, 0)
+
+[node name="Enemy3" parent="." index="2" instance=ExtResource("2_bqm68")]
+position = Vector2(25, 0)
