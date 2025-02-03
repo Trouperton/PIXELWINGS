@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxtp7llnjwdri"]
+
+[ext_resource type="PackedScene" uid="uid://bvwcr4hf5luic" path="res://Scenes/Formations/formation_template.tscn" id="1_b675m"]
+[ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/enemy_green_3.tscn" id="2_msloh"]
+
+[sub_resource type="Curve" id="Curve_ewe5m"]
+min_value = -90.0
+max_value = 90.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 90), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.75, -90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="Formation Green 3 Slalom" instance=ExtResource("1_b675m")]
+spawns_waves = true
+waves_of_ships = 5
+ships_shoot = false
+ship_to_spawn = ExtResource("2_msloh")
+seconds_to_finish_curve = 5.0
+path_curve = SubResource("Curve_ewe5m")
+
+[node name="Enemy" parent="." index="0" instance=ExtResource("2_msloh")]

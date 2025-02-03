@@ -17,14 +17,15 @@ func _ready() -> void:
 	# Local Variables
 	
 	# Main _ready()
-	initial_rotation = rotation_degrees
+	initial_rotation = global_rotation_degrees
 
 func _process(delta: float) -> void:
 	# Local Variables
 	
 	# Main _process()
 	#print(test_curve.sample(curve_counter))
-	rotation_degrees = initial_rotation + path_curve.sample(curve_counter)
+	global_rotation_degrees = initial_rotation + path_curve.sample(curve_counter)
+	
 	if curve_counter < 1:
 		curve_counter += delta / seconds_to_finish_curve
 	elif curve_counter > 1 and loop_curve:
@@ -44,7 +45,7 @@ func movement(delta: float) -> void:
 	# Main movement()
 	## This portion of the code calculates the movement direction vector
 	## based on the rotation of the bullet object
-	move_direction.x = cos((90 - rotation_degrees) * 3.14 / 180)
-	move_direction.y = -(cos(rotation_degrees * 3.14 / 180))
+	move_direction.x = cos((90 - global_rotation_degrees) * 3.14 / 180)
+	move_direction.y = -(cos(global_rotation_degrees * 3.14 / 180))
 	
-	position += move_direction * move_speed * delta
+	global_position += move_direction * move_speed * delta

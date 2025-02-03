@@ -1,16 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://duayu5ksdqvt6"]
+[gd_scene load_steps=6 format=4 uid="uid://duayu5ksdqvt6"]
 
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="1_njrs5"]
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_xd7t4"]
 [ext_resource type="Script" path="res://Scripts/Island_Movement.gd" id="2_5cmm2"]
-[ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/Enemy.tscn" id="4_j5xx6"]
-[ext_resource type="PackedScene" uid="uid://dlj2mf8v7y24b" path="res://Scenes/Prefabs/formation_test.tscn" id="5_2csu3"]
-
-[sub_resource type="Curve" id="Curve_uyutq"]
-min_value = -90.0
-max_value = 90.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[ext_resource type="PackedScene" uid="uid://bu0unb8njjijf" path="res://Scenes/Formations/formation_green_3_vic_3.tscn" id="5_wmbhd"]
+[ext_resource type="PackedScene" uid="uid://cxtp7llnjwdri" path="res://Scenes/Formations/formation_green_3_slalom.tscn" id="6_som7n"]
 
 [node name="Main" type="Node2D"]
 
@@ -27,19 +21,11 @@ script = ExtResource("2_5cmm2")
 [node name="Player" parent="." instance=ExtResource("1_njrs5")]
 position = Vector2(284, 220)
 
-[node name="Enemy" parent="." instance=ExtResource("4_j5xx6")]
-position = Vector2(666, -36)
-rotation = -2.73999
-seconds_to_finish_curve = 3.0
-path_curve = SubResource("Curve_uyutq")
-move_speed = 50.0
+[node name="Formation Green 3 Slalom" parent="." instance=ExtResource("6_som7n")]
+position = Vector2(93, -22)
+rotation = -3.14159
+waves_of_ships = 10
 
-[node name="Enemy2" parent="." instance=ExtResource("4_j5xx6")]
-position = Vector2(285, 18)
-rotation = 3.13916
-loop_curve = false
-move_speed = 50.0
-
-[node name="Formation" parent="." instance=ExtResource("5_2csu3")]
-position = Vector2(536, 19)
-rotation = 3.14159
+[node name="Formation Green 3 Vic 3" parent="." instance=ExtResource("5_wmbhd")]
+position = Vector2(552, -51)
+rotation = -3.14159

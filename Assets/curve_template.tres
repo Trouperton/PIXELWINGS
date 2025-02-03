@@ -1,0 +1,5 @@
+[gd_resource type="Curve" format=3 uid="uid://bjrft6fan4kgc"]
+
+[resource]
+min_value = -180.0
+max_value = 180.0

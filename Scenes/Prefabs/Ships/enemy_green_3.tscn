@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://duuotivaehrtv"]
+
+[ext_resource type="Script" path="res://Scripts/base_enemy.gd" id="1_gx4ut"]
+[ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Projectiles/Bullet.tscn" id="2_x53gp"]
+[ext_resource type="Texture2D" uid="uid://d06rpi4mc8wsi" path="res://Assets/Sprites/Ships/Green/Ship_Green_3.tres" id="3_7csti"]
+
+[sub_resource type="Curve" id="Curve_skrrd"]
+min_value = -90.0
+max_value = 90.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yyeu4"]
+radius = 7.0
+height = 20.0
+
+[node name="Enemy Green Small" type="Area2D" node_paths=PackedStringArray("barrels") groups=["Enemy"]]
+script = ExtResource("1_gx4ut")
+path_curve = SubResource("Curve_skrrd")
+health = 10
+move_speed = 50.0
+primary_fire_projectile = ExtResource("2_x53gp")
+barrels = [NodePath("Sprite2D/Barrel1")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_7csti")
+
+[node name="Barrel1" type="Node2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yyeu4")
+
+[node name="PrimaryFireCooldownTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="PrimaryFireCooldownTimer" to="." method="_on_primary_fire_cooldown_timer_timeout"]
