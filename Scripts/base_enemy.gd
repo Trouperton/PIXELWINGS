@@ -44,7 +44,7 @@ func movement(delta: float) -> void:
 	
 	# Main movement()
 	## This portion of the code calculates the movement direction vector
-	## based on the rotation of the bullet object
+	## based on the rotation of the object
 	move_direction.x = cos((90 - global_rotation_degrees) * 3.14 / 180)
 	move_direction.y = -(cos(global_rotation_degrees * 3.14 / 180))
 	

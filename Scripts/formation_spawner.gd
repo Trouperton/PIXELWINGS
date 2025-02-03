@@ -39,8 +39,6 @@ func _on_deploy_timer_timeout() -> void:
 	
 	# Main _on_deploy_timer_timeout()
 	if child_ships.is_empty():
-		#child_ships = get_children()
-		#child_ships.erase($"Deploy Timer")
 		for i in wave_spawn_positions.size():
 			var spawned_ship = ship_to_spawn.instantiate()
 			
@@ -50,14 +48,9 @@ func _on_deploy_timer_timeout() -> void:
 		get_children_except($"Deploy Timer")
 	
 	deploy_ships_from_formation()
+	
 	wave_counter += 1
-	#for i in child_ships:
-		#i.seconds_to_finish_curve = seconds_to_finish_curve
-		#i.loop_curve = loop_curve
-		#i.path_curve = path_curve
-	#
-	#for i in child_ships:
-		#i.reparent(reparent_node)
+	
 	if not spawns_waves or wave_counter >= waves_of_ships:
 		queue_free()
 
