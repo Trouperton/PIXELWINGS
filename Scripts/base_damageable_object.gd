@@ -6,9 +6,13 @@ extends Area2D
 @export var primary_fire_projectile: PackedScene
 @export var barrels: Array[Node2D]
 
+var health_max: int
 var move_direction: Vector2
 
 # Class Functions
+
+func _ready() -> void:
+	health_max = health
 
 func shoot_primary() -> void:
 	# Local Variables

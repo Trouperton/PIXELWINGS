@@ -1,12 +1,5 @@
 extends "res://Scripts/base_damageable_object.gd"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# Local Variables
-	
-	# Main _ready()
-	pass # Replace with function body.
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Local Variables

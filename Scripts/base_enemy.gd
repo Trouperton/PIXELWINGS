@@ -17,6 +17,7 @@ func _ready() -> void:
 	# Local Variables
 	
 	# Main _ready()
+	super._ready()
 	initial_rotation = global_rotation_degrees
 
 func _process(delta: float) -> void:
