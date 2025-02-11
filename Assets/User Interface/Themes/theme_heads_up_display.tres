@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bvfu8dttislhq"]
+
+[ext_resource type="Texture2D" uid="uid://gu43n7645g3k" path="res://Assets/Sprites/User Interface/Extra/panel_glass.png" id="1_0yk86"]
+[ext_resource type="StyleBox" uid="uid://cl5nady6sson" path="res://Assets/User Interface/Style Boxes/stylebox_button_square_header_blade_rectangle.tres" id="2_46cyf"]
+[ext_resource type="StyleBox" uid="uid://bmmj678r7wpbe" path="res://Assets/User Interface/Style Boxes/sbt_panel_glass_notch_tr.tres" id="3_6ehek"]
+[ext_resource type="FontFile" uid="uid://ckme05aixmmup" path="res://Assets/User Interface/Fonts/Kenney Future.ttf" id="3_lvmdh"]
+[ext_resource type="Texture2D" uid="uid://b6w1f4cqrht8e" path="res://Assets/Sprites/User Interface/Extra/bar_shadow_round_outline_small.png" id="4_5nbsw"]
+[ext_resource type="Texture2D" uid="uid://cyf6myo78rp02" path="res://Assets/Sprites/User Interface/Green/bar_round_gloss_small.png" id="5_3xstu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7log6"]
+texture = ExtResource("1_0yk86")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+modulate_color = Color(1, 1, 1, 0.5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgih4"]
+texture = ExtResource("4_5nbsw")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yod7t"]
+texture = ExtResource("5_3xstu")
+texture_margin_left = 8.0
+texture_margin_right = 8.0
+axis_stretch_horizontal = 1
+
+[resource]
+default_font = ExtResource("3_lvmdh")
+default_font_size = 16
+Label/colors/font_color = Color(0.385493, 0.385492, 0.385492, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_7log6")
+PanelContainer/styles/panel = ExtResource("2_46cyf")
+PanelGlassNotchedTR/base_type = &"Panel"
+PanelGlassNotchedTR/styles/panel = ExtResource("3_6ehek")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_qgih4")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_yod7t")

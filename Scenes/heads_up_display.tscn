@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://b57v22y0fc7c5"]
+
+[ext_resource type="Theme" uid="uid://bvfu8dttislhq" path="res://Assets/User Interface/Themes/theme_heads_up_display.tres" id="1_6xc2q"]
+
+[node name="HUD" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6xc2q")
+
+[node name="Score Panel" type="Panel" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 5.0
+offset_right = 90.0
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="Score Label" type="Label" parent="Score Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 103.0
+offset_bottom = 9.0
+grow_vertical = 2
+text = "Score: 0"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -47.0
+offset_right = 125.0
+offset_bottom = -5.0
+grow_vertical = 0
+theme = ExtResource("1_6xc2q")
+theme_type_variation = &"PanelGlassNotchedTR"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 85.0
+offset_bottom = 23.0
+text = "Health"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 115.0
+offset_bottom = 37.0
+value = 50.0
+show_percentage = false
