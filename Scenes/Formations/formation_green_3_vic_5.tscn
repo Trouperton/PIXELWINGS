@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmt1ewaoimqlx"]
+
+[ext_resource type="PackedScene" uid="uid://bvwcr4hf5luic" path="res://Scenes/Formations/formation_template.tscn" id="1_u03vv"]
+[ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/enemy_green_3.tscn" id="2_fgf7m"]
+[ext_resource type="Curve" uid="uid://bjrft6fan4kgc" path="res://Assets/curve_template.tres" id="2_ybcx8"]
+
+[node name="Formation Green 3 Vic 5" instance=ExtResource("1_u03vv")]
+path_curve = ExtResource("2_ybcx8")
+
+[node name="Enemy Green Small" parent="." index="0" instance=ExtResource("2_fgf7m")]
+
+[node name="Enemy Green Small3" parent="." index="1" instance=ExtResource("2_fgf7m")]
+position = Vector2(20, 20)
+
+[node name="Enemy Green Small2" parent="." index="2" instance=ExtResource("2_fgf7m")]
+position = Vector2(-20, 20)
+
+[node name="Enemy Green Small4" parent="." index="3" instance=ExtResource("2_fgf7m")]
+position = Vector2(40, 40)
+
+[node name="Enemy Green Small5" parent="." index="4" instance=ExtResource("2_fgf7m")]
+position = Vector2(-40, 40)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjse1tcup61bn"]
+
+[ext_resource type="PackedScene" uid="uid://b7tm6uxd7pbov" path="res://Scenes/Waves/wave_template.tscn" id="1_jg7cn"]
+[ext_resource type="PackedScene" uid="uid://cxtp7llnjwdri" path="res://Scenes/Formations/formation_green_3_slalom.tscn" id="2_fqrx7"]
+
+[node name="Wave Green Small Slalom X" instance=ExtResource("1_jg7cn")]
+
+[node name="Formation Green 3 Slalom" parent="." index="0" instance=ExtResource("2_fqrx7")]
+position = Vector2(0, -50)
+rotation = 2.35619
+
+[node name="Formation Green 3 Slalom2" parent="." index="1" instance=ExtResource("2_fqrx7")]
+position = Vector2(690, 0)
+rotation = -2.35619

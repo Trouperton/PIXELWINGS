@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://4y5jsy5de30j"]
+
+[ext_resource type="PackedScene" uid="uid://b7tm6uxd7pbov" path="res://Scenes/Waves/wave_template.tscn" id="1_0u2jm"]
+[ext_resource type="PackedScene" uid="uid://dmt1ewaoimqlx" path="res://Scenes/Formations/formation_green_3_vic_5.tscn" id="2_4ip28"]
+[ext_resource type="PackedScene" uid="uid://bu0unb8njjijf" path="res://Scenes/Formations/formation_green_3_vic_3.tscn" id="3_fqb3y"]
+
+[node name="Wave Green Small Triple Straight Vics" instance=ExtResource("1_0u2jm")]
+
+[node name="Formation Green 3 Vic 5" parent="." index="0" instance=ExtResource("2_4ip28")]
+position = Vector2(320, -20)
+rotation = 3.14159
+
+[node name="Formation Green 3 Vic 3" parent="." index="1" instance=ExtResource("3_fqb3y")]
+position = Vector2(160, -80)
+rotation = 3.14159
+
+[node name="Formation Green 3 Vic 4" parent="." index="2" instance=ExtResource("3_fqb3y")]
+position = Vector2(480, -80)
+rotation = 3.14159
