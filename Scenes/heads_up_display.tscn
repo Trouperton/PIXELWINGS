@@ -35,7 +35,7 @@ grow_vertical = 2
 text = "Score: 0"
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Health Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -48,7 +48,7 @@ grow_vertical = 0
 theme = ExtResource("1_6xc2q")
 theme_type_variation = &"PanelGlassNotchedTR"
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Health Label" type="Label" parent="Health Panel"]
 layout_mode = 1
 offset_left = 5.0
 offset_top = 5.0
@@ -56,7 +56,7 @@ offset_right = 85.0
 offset_bottom = 23.0
 text = "Health"
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+[node name="Health Bar" type="ProgressBar" parent="Health Panel"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 23.0
