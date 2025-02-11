@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b64xeaa12phvk"]
+
+[ext_resource type="StyleBox" uid="uid://bykmeq5l1nnx4" path="res://Assets/User Interface/Style Boxes/sbt_panel_glass.tres" id="1_ku0fw"]
+
+[resource]
+Panel/styles/panel = ExtResource("1_ku0fw")
