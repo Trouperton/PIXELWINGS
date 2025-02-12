@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b64xeaa12phvk"]
+
+[ext_resource type="StyleBox" uid="uid://bykmeq5l1nnx4" path="res://Assets/User Interface/Style Boxes/sbt_panel_glass.tres" id="1_ku0fw"]
+[ext_resource type="Texture2D" uid="uid://c4hhs31x1s4c7" path="res://Assets/Sprites/User Interface/Extra/button_rectangle_depth.png" id="1_o7sy4"]
+[ext_resource type="Texture2D" uid="uid://cc6q0curhv25t" path="res://Assets/Sprites/User Interface/Extra/button_rectangle.png" id="2_vxg23"]
+[ext_resource type="FontFile" uid="uid://ckme05aixmmup" path="res://Assets/User Interface/Fonts/Kenney Future.ttf" id="4_84p51"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chnke"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ku2b"]
+texture = ExtResource("1_o7sy4")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 16.0
+modulate_color = Color(0.960784, 0.960784, 0.960784, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g72x"]
+texture = ExtResource("1_o7sy4")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6mk0"]
+texture = ExtResource("2_vxg23")
+texture_margin_left = 12.0
+texture_margin_top = 16.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[resource]
+default_font = ExtResource("4_84p51")
+Button/colors/font_color = Color(0.466182, 0.466181, 0.466181, 1)
+Button/colors/font_focus_color = Color(0.466667, 0.466667, 0.466667, 1)
+Button/colors/font_hover_color = Color(0.466667, 0.466667, 0.466667, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_chnke")
+Button/styles/hover = SubResource("StyleBoxTexture_8ku2b")
+Button/styles/normal = SubResource("StyleBoxTexture_5g72x")
+Button/styles/pressed = SubResource("StyleBoxTexture_q6mk0")
+Panel/styles/panel = ExtResource("1_ku0fw")
