@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpa4w8bhb5e5y"]
+[gd_scene load_steps=8 format=3 uid="uid://cpa4w8bhb5e5y"]
 
 [ext_resource type="Theme" uid="uid://b64xeaa12phvk" path="res://Assets/User Interface/Themes/theme_default.tres" id="1_31heo"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="2_j1165"]
+[ext_resource type="Script" path="res://Scenes/level_selection_button.gd" id="3_8w73h"]
+[ext_resource type="PackedScene" uid="uid://4m8r36db8cd7" path="res://Scenes/Levels/level_1.tscn" id="4_0ijcj"]
+[ext_resource type="Script" path="res://Scenes/exit_button.gd" id="5_evlwu"]
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22p07"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1e8hb"]
+
+[node name="Main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,8 +18,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_31heo")
+script = ExtResource("2_j1165")
+invisible_focus_style_box = SubResource("StyleBoxEmpty_22p07")
+visible_focus_style_box = SubResource("StyleBoxTexture_1e8hb")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Main Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title Label" type="Label" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.5
+offset_top = 16.0
+offset_right = 252.5
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "PIXEL WINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Panel" type="Panel" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -25,7 +59,7 @@ offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="Button" parent="Main Menu/Button Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,19 +72,28 @@ offset_right = 45.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_bottom = NodePath("../Exit Button")
 text = "test"
+script = ExtResource("3_8w73h")
+is_the_first_selected_button = true
+target_scene = ExtResource("4_0ijcj")
 
-[node name="Label" type="Label" parent="."]
+[node name="Exit Button" type="Button" parent="Main Menu/Button Panel"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -199.0
-offset_top = 16.0
-offset_right = 199.0
-offset_bottom = 104.0
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 40.0
+offset_right = 61.0
+offset_bottom = 86.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
-text = "PIXEL WINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 2
+focus_neighbor_top = NodePath("../Button")
+text = "Exit"
+script = ExtResource("5_evlwu")
+
+[connection signal="pressed" from="Main Menu/Button Panel/Button" to="Main Menu/Button Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu/Button Panel/Exit Button" to="Main Menu/Button Panel/Exit Button" method="_on_pressed"]
