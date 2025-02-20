@@ -59,41 +59,32 @@ offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Main Menu/Button Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/Button Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -26.0
-offset_right = 45.0
-offset_bottom = 26.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = -11.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Main Menu/Button Panel/VBoxContainer"]
+layout_mode = 2
 focus_neighbor_bottom = NodePath("../Exit Button")
 text = "test"
 script = ExtResource("3_8w73h")
 is_the_first_selected_button = true
 target_scene = ExtResource("4_0ijcj")
 
-[node name="Exit Button" type="Button" parent="Main Menu/Button Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.0
-offset_top = 40.0
-offset_right = 61.0
-offset_bottom = 86.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Exit Button" type="Button" parent="Main Menu/Button Panel/VBoxContainer"]
+layout_mode = 2
 focus_neighbor_top = NodePath("../Button")
 text = "Exit"
 script = ExtResource("5_evlwu")
 
-[connection signal="pressed" from="Main Menu/Button Panel/Button" to="Main Menu/Button Panel/Button" method="_on_pressed"]
-[connection signal="pressed" from="Main Menu/Button Panel/Exit Button" to="Main Menu/Button Panel/Exit Button" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu/Button Panel/VBoxContainer/Button" to="Main Menu/Button Panel/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Main Menu/Button Panel/VBoxContainer/Exit Button" to="Main Menu/Button Panel/VBoxContainer/Exit Button" method="_on_pressed"]
