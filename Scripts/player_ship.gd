@@ -27,3 +27,11 @@ func _on_primary_fire_cooldown_timer_timeout() -> void:
 	
 	# Main _on_primary_fire_cooldown_timer_timeout()
 	shoot_primary()
+
+func damage(damage_dealt: int):
+	super.damage(damage_dealt)
+	
+	#if $"HUD".is_inside_tree():
+		#print("Found HUD")
+	Input.start_joy_vibration(0, 0.5, 0, 0.2)
+	get_parent().get_node("HUD").update_health_bar((float(health) / health_max) * 100)
