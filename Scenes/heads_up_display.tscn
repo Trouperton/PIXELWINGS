@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b57v22y0fc7c5"]
+[gd_scene load_steps=3 format=3 uid="uid://b57v22y0fc7c5"]
 
 [ext_resource type="Theme" uid="uid://bvfu8dttislhq" path="res://Assets/User Interface/Themes/theme_heads_up_display.tres" id="1_6xc2q"]
+[ext_resource type="Script" path="res://Scripts/UI/heads_up_display.gd" id="2_dm8o4"]
 
 [node name="HUD" type="Control"]
 z_index = 100
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6xc2q")
+script = ExtResource("2_dm8o4")
 
 [node name="Score Panel" type="Panel" parent="."]
 layout_mode = 2
@@ -29,10 +31,11 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 12.0
 offset_top = -9.0
-offset_right = 103.0
+offset_right = 168.0
 offset_bottom = 9.0
 grow_vertical = 2
-text = "Score: 0"
+text = "0"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Health Panel" type="Panel" parent="."]
@@ -50,17 +53,17 @@ theme_type_variation = &"PanelGlassNotchedTR"
 
 [node name="Health Label" type="Label" parent="Health Panel"]
 layout_mode = 1
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 85.0
-offset_bottom = 23.0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 91.0
+offset_bottom = 24.0
 text = "Health"
 
 [node name="Health Bar" type="ProgressBar" parent="Health Panel"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 6.0
 offset_top = 23.0
-offset_right = 115.0
-offset_bottom = 37.0
+offset_right = 114.0
+offset_bottom = 36.0
 value = 50.0
 show_percentage = false
