@@ -39,6 +39,6 @@ func damage(damage_dealt: int):
 	super.damage(damage_dealt)
 	
 	## Briefly rumbles the weak motor on a controller
-	Input.start_joy_vibration(0, 0.5, 0, 0.2)
+	Input.start_joy_vibration(0, 0.2, 0, 0.2)
 	## Updates the health bar by calling the appropriate method on the HUD
 	get_parent().get_node("HUD").update_health_bar((float(health) / health_max) * 100)
