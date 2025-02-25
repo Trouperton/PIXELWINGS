@@ -8,6 +8,8 @@ extends Node2D
 @export var waves_to_spawn: Array[PackedScene]
 @export var times_between_waves: Array[float]
 
+var hud_reference
+
 var score: int = 0
 
 var wave_timer: float = 0
@@ -23,6 +25,8 @@ func _ready() -> void:
 		printerr("[Scene Manager] waves_to_spawn is empty")
 	if times_between_waves.is_empty():
 		printerr("[Scene Manager] times_between_waves is empty")
+	
+	hud_reference = get_node("HUD")
 	
 	spawn_player()
 
@@ -49,3 +53,10 @@ func spawn_player():
 	
 	# Main spawn_player()
 	pass
+
+func add_to_score(input_score: int) -> void:
+	# Local Variables
+	
+	# Main add_to_score()
+	score += input_score
+	hud_reference.update_score_label(score)

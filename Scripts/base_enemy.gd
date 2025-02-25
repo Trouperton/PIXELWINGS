@@ -50,3 +50,11 @@ func movement(delta: float) -> void:
 	move_direction.y = -(cos(global_rotation_degrees * 3.14 / 180))
 	
 	global_position += move_direction * move_speed * delta
+
+func kill() -> void:
+	# Local Variables
+	
+	# Main despawn()
+	get_tree().root.get_child(0).add_to_score(score_value)
+	
+	super.kill()

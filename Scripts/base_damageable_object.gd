@@ -28,15 +28,24 @@ func shoot_primary() -> void:
 			spawned_projectile.add_to_group(group)
 		get_tree().current_scene.add_child(spawned_projectile)
 
-func damage(damage_dealt: int):
+## Called to apply damage to the object
+func damage(damage_dealt: int) -> void:
 	# Local Variables
 	
 	# Main damage()
 	health -= damage_dealt
 	if health < 1:
-		despawn()
+		kill()
 
-func despawn():
+## Called when the object is killed, usually by losing all Hit Points
+func kill() -> void:
+	# Local Variables
+	
+	# Main kill()
+	despawn()
+
+## Called when despawning the object
+func despawn() -> void:
 	# Local Variables
 	
 	# Main despawn()
