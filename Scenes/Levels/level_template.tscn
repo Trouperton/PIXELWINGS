@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://b1j40gh27n2jy"]
+[gd_scene load_steps=6 format=4 uid="uid://b1j40gh27n2jy"]
 
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_l73ve"]
 [ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_xn21m"]
 [ext_resource type="Script" path="res://Scripts/Island_Movement.gd" id="2_4p0se"]
+[ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="2_8g47p"]
 [ext_resource type="PackedScene" uid="uid://b57v22y0fc7c5" path="res://Scenes/heads_up_display.tscn" id="2_irku0"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_xn21m")
 spawn_position = Vector2i(320, 300)
+player_ship = ExtResource("2_8g47p")
+player_spawn = NodePath("Spawn Point")
 
 [node name="HUD" parent="." instance=ExtResource("2_irku0")]
 anchors_preset = 0
@@ -26,3 +29,6 @@ tile_set = ExtResource("1_l73ve")
 [node name="TileMapLayer2" type="TileMapLayer" parent="TileMapLayer"]
 tile_set = ExtResource("1_l73ve")
 script = ExtResource("2_4p0se")
+
+[node name="Spawn Point" type="Node2D" parent="."]
+position = Vector2(320, 300)

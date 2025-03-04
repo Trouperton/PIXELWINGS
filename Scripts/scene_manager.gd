@@ -3,6 +3,7 @@ extends Node2D
 @export_category("Player")
 @export var spawn_position: Vector2i = Vector2i(320, 220)
 @export var player_ship: PackedScene
+@export var player_spawn: Node2D
 
 @export_category("Waves")
 @export var waves_to_spawn: Array[PackedScene]
@@ -50,9 +51,11 @@ func _process(delta: float) -> void:
 
 func spawn_player():
 	# Local Variables
-	
+	var player_to_spawn = player_ship.instantiate()
 	# Main spawn_player()
-	pass
+	player_to_spawn.position = player_spawn.position
+	
+	add_child(player_to_spawn)
 
 func add_to_score(input_score: int) -> void:
 	# Local Variables
