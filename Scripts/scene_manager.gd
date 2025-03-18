@@ -54,6 +54,7 @@ func _process(delta: float) -> void:
 func spawn_player():
 	# Local Variables
 	var player_to_spawn = player_ship.instantiate()
+	
 	# Main spawn_player()
 	player_to_spawn.position = player_spawn.position
 	

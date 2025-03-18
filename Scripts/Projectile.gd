@@ -1,10 +1,7 @@
 extends Area2D
 
-# Global Variables
 @export var speed: int = 200
 @export var damage: int = 10
-
-# Class Functions
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,7 +31,13 @@ func movement(delta: float) -> void:
 	position += direction * speed * delta
 
 func despawn() -> void:
+	# Local Variables
+	
+	# Main despawn()
 	queue_free()
 
 func _on_despawn_timer_timeout() -> void:
+	# Local Variables
+	
+	# Main _on_despawn_timer_timeout()
 	despawn()

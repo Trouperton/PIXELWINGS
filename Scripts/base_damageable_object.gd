@@ -1,6 +1,5 @@
 extends Area2D
 
-# Global Variables
 @export var health: int = 100
 @export var move_speed: float = 200
 @export var primary_fire_projectile: PackedScene
@@ -8,8 +7,6 @@ extends Area2D
 
 var health_max: int
 var move_direction: Vector2
-
-# Class Functions
 
 func _ready() -> void:
 	health_max = health

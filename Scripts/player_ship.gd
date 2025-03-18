@@ -48,4 +48,5 @@ func kill() -> void:
 	
 	# Main kill()
 	get_parent().get_node("Game Over Screen").visible = true
+	
 	super.kill()

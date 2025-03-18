@@ -1,6 +1,5 @@
 extends "res://Scripts/base_damageable_object.gd"
 
-# Global Variables
 @export var score_value: int = 100
 
 @export_group("Movement Pattern")
@@ -10,8 +9,6 @@ extends "res://Scripts/base_damageable_object.gd"
 
 var curve_counter: float = 0
 var initial_rotation: float
-
-# Class Functions
 
 func _ready() -> void:
 	# Local Variables
