@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b64xeaa12phvk" path="res://Assets/User Interface/Themes/theme_default.tres" id="1_31heo"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="2_j1165"]
-[ext_resource type="Script" path="res://Scripts/UI/Buttons/level_selection_button.gd" id="3_8w73h"]
+[ext_resource type="Script" path="res://Scripts/UI/Buttons/scene_change_button.gd" id="3_8w73h"]
 [ext_resource type="PackedScene" uid="uid://4m8r36db8cd7" path="res://Scenes/Levels/level_1.tscn" id="4_0ijcj"]
 [ext_resource type="Script" path="res://Scripts/UI/Buttons/exit_button.gd" id="5_evlwu"]
 

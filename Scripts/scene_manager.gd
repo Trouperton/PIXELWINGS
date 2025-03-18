@@ -29,6 +29,8 @@ func _ready() -> void:
 	
 	hud_reference = get_node("HUD")
 	
+	get_tree().paused = false
+	
 	spawn_player()
 
 func _process(delta: float) -> void:

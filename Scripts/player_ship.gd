@@ -42,3 +42,10 @@ func damage(damage_dealt: int):
 	Input.start_joy_vibration(0, 0.2, 0, 0.2)
 	## Updates the health bar by calling the appropriate method on the HUD
 	get_parent().get_node("HUD").update_health_bar((float(health) / health_max) * 100)
+
+func kill() -> void:
+	# Local Variables
+	
+	# Main kill()
+	get_parent().get_node("Game Over Screen").visible = true
+	super.kill()
