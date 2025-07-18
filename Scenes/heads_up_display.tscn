@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b57v22y0fc7c5"]
 
 [ext_resource type="Theme" uid="uid://bvfu8dttislhq" path="res://Assets/User Interface/Themes/theme_heads_up_display.tres" id="1_6xc2q"]
-[ext_resource type="Script" path="res://Scripts/UI/heads_up_display.gd" id="2_dm8o4"]
+[ext_resource type="Script" uid="uid://bid8ummjugbhy" path="res://Scripts/UI/heads_up_display.gd" id="2_dm8o4"]
 
 [node name="HUD" type="Control"]
 z_index = 100

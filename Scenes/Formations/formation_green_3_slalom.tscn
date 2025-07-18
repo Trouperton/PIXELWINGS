@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duuotivaehrtv" path="res://Scenes/Prefabs/Ships/enemy_green_3.tscn" id="2_msloh"]
 
 [sub_resource type="Curve" id="Curve_ewe5m"]
-min_value = -90.0
-max_value = 90.0
+_limits = [-90.0, 90.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 90), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.75, -90), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 5
 

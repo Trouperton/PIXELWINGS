@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1x50rpfnfopc"]
 
-[ext_resource type="Script" path="res://Scripts/player_ship.gd" id="1_oevpn"]
+[ext_resource type="Script" uid="uid://w85gyrflilmn" path="res://Scripts/player_ship.gd" id="1_oevpn"]
 [ext_resource type="PackedScene" uid="uid://r6wjdi3pxouw" path="res://Scenes/Prefabs/Projectiles/Bullet.tscn" id="2_188fx"]
 [ext_resource type="Texture2D" uid="uid://b2m15a3h3y8ac" path="res://Assets/Sprites/Ships/Green/Ship_Green_G1.tres" id="3_rflij"]
 

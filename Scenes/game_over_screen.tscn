@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6e870xwxbt7x"]
 
 [ext_resource type="Theme" uid="uid://b64xeaa12phvk" path="res://Assets/User Interface/Themes/theme_default.tres" id="1_k4r2u"]
-[ext_resource type="Script" path="res://Scripts/UI/game_over_screen.gd" id="2_uhxt5"]
+[ext_resource type="Script" uid="uid://b767imp5cfri1" path="res://Scripts/UI/game_over_screen.gd" id="2_uhxt5"]
 
 [node name="Game Over Screen" type="Control"]
 process_mode = 2
