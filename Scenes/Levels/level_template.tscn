@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_l73ve"]
 [ext_resource type="Script" uid="uid://j37de2w801i6" path="res://Scripts/scene_manager.gd" id="1_xn21m"]
-[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Island_Movement.gd" id="2_4p0se"]
+[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Objects/Island_Movement.gd" id="2_4p0se"]
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="2_8g47p"]
 [ext_resource type="PackedScene" uid="uid://b57v22y0fc7c5" path="res://Scenes/heads_up_display.tscn" id="2_irku0"]
 [ext_resource type="PackedScene" uid="uid://6e870xwxbt7x" path="res://Scenes/game_over_screen.tscn" id="4_hqgji"]

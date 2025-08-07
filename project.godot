@@ -29,6 +29,18 @@ mouse_cursor/custom_image="res://Assets/Sprites/User Interface/Extra/cursor_h.pn
 
 project/assembly_name="Plane Shoot em Up"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "gray",
+"res://Scripts/Enemies/": "red",
+"res://Scripts/Objects/": "green",
+"res://Scripts/Player/": "blue",
+"res://Scripts/UI/": "purple"
+}
+
 [global_group]
 
 Player=""
