@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://4m8r36db8cd7"]
+[gd_scene load_steps=6 format=4 uid="uid://4m8r36db8cd7"]
 
 [ext_resource type="PackedScene" uid="uid://b1j40gh27n2jy" path="res://Scenes/Levels/level_template.tscn" id="1_qmvqt"]
 [ext_resource type="PackedScene" uid="uid://4y5jsy5de30j" path="res://Scenes/Waves/wave_green_3_triple_straight_vics.tscn" id="2_2c4no"]
 [ext_resource type="PackedScene" uid="uid://cjse1tcup61bn" path="res://Scenes/Waves/wave_green_3_slalom_x.tscn" id="3_3vkhr"]
+[ext_resource type="Texture2D" uid="uid://b0s641ugut8pc" path="res://Assets/Sprites/Objects/Clouds/Cloud_Big_1.tres" id="4_cyadu"]
+[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Objects/environment_movement.gd" id="5_xgxfi"]
 
 [node name="Main" instance=ExtResource("1_qmvqt")]
 waves_to_spawn = Array[PackedScene]([ExtResource("2_2c4no"), ExtResource("3_3vkhr"), ExtResource("2_2c4no")])
@@ -10,3 +12,12 @@ times_between_waves = Array[float]([5.0, 5.0, 5.0])
 
 [node name="TileMapLayer2" parent="TileMapLayer" index="0"]
 tile_map_data = PackedByteArray("AAAMAPz/AAADAAUAAAAMAPv/AAADAAQAAAAMAPr/AAADAAQAAAAMAPn/AAADAAQAAAAMAPj/AAAEAAMAAAAMAPf/AAACAAQAAAAMAPb/AAAFAAQAAAALAPz/AAACAAUAAAALAPv/AAACAAkAAAALAPr/AAACAAQAAAALAPn/AAACAAQAAAALAPj/AAACAAkAAAALAPf/AAACAAQAAAALAPb/AAACAAMAAAAKAPz/AAACAAUAAAAKAPv/AAACAAQAAAAKAPr/AAACAAQAAAAKAPn/AAAAAAYAAAAKAPj/AAACAAkAAAAKAPf/AAACAAQAAAAKAPb/AAACAAMAAAAJAPz/AAACAAUAAAAJAPv/AAACAAkAAAAJAPr/AAACAAkAAAAJAPn/AAACAAkAAAAJAPj/AAACAAkAAAAJAPf/AAACAAQAAAAJAPb/AAACAAMAAAAIAPz/AAABAAUAAAAIAPv/AAABAAQAAAAIAPr/AAABAAQAAAAIAPn/AAABAAQAAAAIAPj/AAABAAQAAAAIAPf/AAABAAQAAAAIAPb/AAABAAMAAAAUAPj/AAADAAUAAAAUAPf/AAADAAQAAAAUAPb/AAADAAQAAAAUAPX/AAADAAMAAAATAPj/AAACAAUAAAATAPf/AAACAAQAAAATAPb/AAACAAkAAAATAPX/AAACAAMAAAASAPj/AAACAAUAAAASAPf/AAACAAkAAAASAPb/AAACAAQAAAASAPX/AAACAAMAAAARAPj/AAACAAUAAAARAPf/AAACAAQAAAARAPb/AAACAAQAAAARAPX/AAACAAMAAAAQAPj/AAACAAUAAAAQAPf/AAACAAQAAAAQAPb/AAACAAkAAAAQAPX/AAACAAMAAAAPAPj/AAACAAUAAAAPAPf/AAACAAQAAAAPAPb/AAACAAkAAAAPAPX/AAACAAMAAAAOAPj/AAACAAUAAAAOAPf/AAACAAkAAAAOAPb/AAACAAQAAAAOAPX/AAACAAMAAAANAPj/AAACAAUAAAANAPf/AAACAAQAAAANAPb/AAACAAQAAAANAPX/AAACAAMAAAAMAPX/AAABAAMAAAA=")
+
+[node name="Node2D" type="Node2D" parent="." index="4"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" index="0"]
+self_modulate = Color(1, 1, 1, 0.23529412)
+position = Vector2(517, -87)
+texture = ExtResource("4_cyadu")
+script = ExtResource("5_xgxfi")
+speed = 100.0

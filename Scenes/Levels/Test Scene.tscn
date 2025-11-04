@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://duayu5ksdqvt6"]
 
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_wpy5r"]
-[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Objects/Island_Movement.gd" id="2_ibyeu"]
+[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Objects/environment_movement.gd" id="2_ibyeu"]
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="3_348gw"]
 [ext_resource type="PackedScene" uid="uid://cxtp7llnjwdri" path="res://Scenes/Formations/formation_green_3_slalom.tscn" id="4_gax3g"]
 [ext_resource type="PackedScene" uid="uid://bu0unb8njjijf" path="res://Scenes/Formations/formation_green_3_vic_3.tscn" id="5_4armn"]
