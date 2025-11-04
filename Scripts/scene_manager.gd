@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 		if wave_timer >= times_between_waves[wave_counter]:
 			var wave_to_instantiate = waves_to_spawn[wave_counter].instantiate()
 			
-			print("spawning wave")
+			debug_print("Spawning wave [" + str(wave_counter) + "]")
 			
 			wave_to_instantiate.position = Vector2(0, 0)
 			
@@ -66,3 +66,7 @@ func add_to_score(input_score: int) -> void:
 	# Main add_to_score()
 	score += input_score
 	hud_reference.update_score_label(score)
+
+func debug_print(message: String):
+	if OS.is_debug_build():
+		print("[" + name + "][" + get_stack()[0]["source"] + "] " + message)
