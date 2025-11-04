@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b1j40gh27n2jy"]
+[gd_scene load_steps=10 format=4 uid="uid://b1j40gh27n2jy"]
 
 [ext_resource type="TileSet" uid="uid://b04hr28t258rx" path="res://Assets/Terrain Tile Set.tres" id="1_l73ve"]
 [ext_resource type="Script" uid="uid://j37de2w801i6" path="res://Scripts/scene_manager.gd" id="1_xn21m"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b1x50rpfnfopc" path="res://Scenes/Prefabs/Ships/Player.tscn" id="2_8g47p"]
 [ext_resource type="PackedScene" uid="uid://b57v22y0fc7c5" path="res://Scenes/heads_up_display.tscn" id="2_irku0"]
 [ext_resource type="PackedScene" uid="uid://6e870xwxbt7x" path="res://Scenes/game_over_screen.tscn" id="4_hqgji"]
+[ext_resource type="Script" uid="uid://ckd02o07v3c6f" path="res://Scripts/cloud_spawner.gd" id="7_aibml"]
+[ext_resource type="PackedScene" uid="uid://cvr0b4r7ytyyn" path="res://Scenes/Prefabs/Clouds/big_cloud_1.tscn" id="8_ert0c"]
+[ext_resource type="PackedScene" uid="uid://cnvkn324bs1d6" path="res://Scenes/Prefabs/Clouds/big_cloud_2.tscn" id="9_08cxd"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player_spawn")]
 script = ExtResource("1_xn21m")
@@ -43,3 +46,8 @@ script = ExtResource("2_4p0se")
 
 [node name="Spawn Point" type="Node2D" parent="."]
 position = Vector2(320, 300)
+
+[node name="Cloud Spawner" type="Node2D" parent="."]
+script = ExtResource("7_aibml")
+clouds_scenes = Array[PackedScene]([ExtResource("8_ert0c"), ExtResource("9_08cxd")])
+cloud_speed = 60.0

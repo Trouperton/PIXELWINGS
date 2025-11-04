@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvr0b4r7ytyyn"]
+
+[ext_resource type="Texture2D" uid="uid://b0s641ugut8pc" path="res://Assets/Sprites/Objects/Clouds/Cloud_Big_1.tres" id="1_r2a44"]
+[ext_resource type="Script" uid="uid://bcv2w0eki7dq3" path="res://Scripts/Objects/environment_movement.gd" id="2_ckv4e"]
+[ext_resource type="Script" uid="uid://dtosdychl47hi" path="res://Scenes/Prefabs/Clouds/cloud_despawn_timer.gd" id="3_8m86g"]
+
+[node name="Big Cloud 1" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0.23529412)
+texture = ExtResource("1_r2a44")
+script = ExtResource("2_ckv4e")
+speed = 100.0
+
+[node name="Cloud Despawn Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("3_8m86g")
+
+[connection signal="timeout" from="Cloud Despawn Timer" to="Cloud Despawn Timer" method="_on_timeout"]

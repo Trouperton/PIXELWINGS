@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnvkn324bs1d6"]
+
+[ext_resource type="PackedScene" uid="uid://cvr0b4r7ytyyn" path="res://Scenes/Prefabs/Clouds/big_cloud_1.tscn" id="1_jgkls"]
+[ext_resource type="Texture2D" uid="uid://dreijww45yihc" path="res://Assets/Sprites/Objects/Clouds/Cloud_Big_2.tres" id="2_dpfhc"]
+
+[node name="Big Cloud 2" instance=ExtResource("1_jgkls")]
+texture = ExtResource("2_dpfhc")
